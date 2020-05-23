@@ -45,6 +45,18 @@ function setBgGreet() {
     } else if(hour< 18) {
         //Afternoon
         document.body.style.backgroundImage = "url('../img/Afternoon.jpg')";
+        document.body.style.backgroundPositionX = 'left'
+        document.body.style.backgroundPositionY = 'top'
+        // learn about window.screen: https://developer.mozilla.org/en-US/search?q=window.screen
+        const windowHeight = window.screen.height
+        const windowWidth = window.screen.width
+        // set the background size 
+        // learn about template literals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+        document.body.style.backgroundSize = `${windowWidth}px ${windowHeight}px`
+        // todo
+        // - what happens if I resize the window??
+        // - how do i update the background image size into a function, so that I can use it for other time slots??
+        // - how can i optimize my images??
         greeting.textContent = 'Good Afternoon';
     } else {
         //Evening
